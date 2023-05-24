@@ -1,7 +1,29 @@
 <html>
 <head><title>test</title></head>
-<body> 
-<img align="middle" src="godzilla.gif">
-Dave O'Hallaron
+<script>
+    // getElementById는 document객체의 내장 함수, 매개변수로 받은 id의 요소개체를 반환함
+    function sum() {
+        let arg1 = document.getElementById("A").value;
+        let arg2 = document.getElementById("B").value;
+        document.location.href=`./cgi-bin/adder?${arg1}&${arg2}`;
+    }
+</script>
+<style>
+    .video {
+        width: 50%;
+        max-width: 50%;
+        height: auto;
+    }
+</style>
+<body>
+<!-- <img align="middle" src="godzilla.gif"> -->
+    <video class="video" type="video/mp4" src="class.mp4" controls loop></video>
+<!-- gci-bin의 adder.c을 호출 
+from 태그를 통해 GET메서드를 사용하여 adder.c를 호출하고, 두 인자를 전달
+-->
+    <p>a:<input type ="text" id = "A"/></p>
+    <p>b:<input type ="text" id = "B"/></p>
+    <button onclick="sum()">adder</button>
+    <p>Dave O'Hallaron</p>
 </body>
 </html>
